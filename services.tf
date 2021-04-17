@@ -32,3 +32,17 @@ resource "google_project_service" "compute_engine" {
 
   disable_dependent_services = true
 }
+
+resource "google_project_service" "iam_service" {
+  project = var.project_id
+  service = "iam.googleapis.com"
+
+  disable_dependent_services = true
+}
+
+resource "google_project_service" "cloudresourcemanager_service" {
+  project = var.project_id
+  service = "cloudresourcemanager.googleapis.com"
+
+  disable_dependent_services = true
+}

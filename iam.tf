@@ -55,3 +55,21 @@ resource "google_project_iam_binding" "cloudfunctions_binding" {
     "serviceAccount:${google_service_account.terraform_sa.email}",
   ]
 }
+
+resource "google_project_iam_binding" "compute_binding" {
+  project = var.project_id
+  role    = "roles/compute.viewer"
+
+  members = [
+    "serviceAccount:${google_service_account.terraform_sa.email}",
+  ]
+}
+
+resource "google_project_iam_binding" "iam_binding" {
+  project = var.project_id
+  role    = "roles/iam.serviceAccountUser"
+
+  members = [
+    "serviceAccount:${google_service_account.terraform_sa.email}",
+  ]
+}
