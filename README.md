@@ -20,7 +20,7 @@ The following resources are created by the terraform configurations;
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | App Engine App            | Cannot be deleted once created, see the [provider documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/app_engine_application) for an explanation               |
 | Terraform Service Account | Allows other projects to use a service account for automated deployments. A private key is output at the end of running `terraform apply` for use in future pipelines, so make sure this is kept secret. |
-| Project API Services      | These APIs are activated from the start; <br/><ul><li>Cloud Build</li><li>App Engine</li><li>Cloud Functions</li><li>Cloud Storage</li></ul>                                                             |
+| Project API Services      | These APIs are activated from the start; <br/><ul><li>Cloud Build</li><li>App Engine</li><li>Cloud Functions</li><li>Cloud Storage</li><li>Compute Engine</li></ul>                                      |
 | Storage Bucket            | This bucket is reserved for automated deployment `.tfstate` file. The appropriate ACL is set on it such that only the Terraform Service Account can access it (and project owners of course).            |
 
 ## Creation
