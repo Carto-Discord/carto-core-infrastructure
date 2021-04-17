@@ -3,6 +3,14 @@ resource "google_service_account" "terraform_sa" {
   display_name = "Terraform Service Account"
 }
 
+resource "google_service_account_key" "terraform_key" {
+  service_account_id = google_service_account.terraform_sa.name
+}
+
+output "terraform_private_key" {
+  value = google_service_account_key.terraform_key.private_key
+}
+
 resource "google_project_iam_binding" "appengine_binding" {
   project = var.project_id
   role    = "roles/appengine.deployer"
