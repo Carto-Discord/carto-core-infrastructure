@@ -53,3 +53,10 @@ resource "google_project_service" "cloudscheduler_service" {
 
   disable_dependent_services = true
 }
+
+resource "google_project_service" "cloudfirestore_service" {
+  project = var.project_id
+  service = "firestore.googleapis.com"
+
+  disable_dependent_services = true
+}
