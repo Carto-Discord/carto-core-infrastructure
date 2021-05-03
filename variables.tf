@@ -1,5 +1,5 @@
 variable "project_id" {
-  default     = "carto-discord"
+  default     = "carto-bot"
   description = "ID of the GCP project to use"
 }
 

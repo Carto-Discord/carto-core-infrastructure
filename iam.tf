@@ -11,12 +11,6 @@ output "terraform_private_key" {
   value = google_service_account_key.terraform_key.private_key
 }
 
-resource "google_project_iam_member" "appengine_binding" {
-  project = var.project_id
-  role    = "roles/appengine.deployer"
-  member  = "serviceAccount:${google_service_account.terraform_sa.email}"
-}
-
 resource "google_project_iam_member" "cloudbuild_binding" {
   project = var.project_id
   role    = "roles/cloudbuild.builds.builder"
