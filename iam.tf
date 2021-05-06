@@ -8,7 +8,8 @@ resource "google_service_account_key" "terraform_key" {
 }
 
 output "terraform_private_key" {
-  value = google_service_account_key.terraform_key.private_key
+  value     = google_service_account_key.terraform_key.private_key
+  sensitive = true
 }
 
 resource "google_project_iam_member" "cloudbuild_binding" {

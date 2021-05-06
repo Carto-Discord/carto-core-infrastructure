@@ -1,4 +1,4 @@
 provider "google" {
-  project = "carto-discord"
+  project = "carto-bot"
   region  = "us-central1"
 }
