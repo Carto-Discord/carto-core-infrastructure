@@ -47,9 +47,3 @@ resource "google_project_iam_member" "iam_binding" {
   role    = "roles/iam.serviceAccountUser"
   member  = "serviceAccount:${google_service_account.terraform_sa.email}"
 }
-
-resource "google_project_iam_member" "pubsub_binding" {
-  project = var.project_id
-  role    = "roles/pubsub.editor"
-  member  = "serviceAccount:${google_service_account.terraform_sa.email}"
-}

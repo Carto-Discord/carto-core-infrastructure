@@ -39,10 +39,3 @@ resource "google_project_service" "cloudfirestore_service" {
 
   disable_dependent_services = true
 }
-
-resource "google_project_service" "pubsub_service" {
-  project = var.project_id
-  service = "pubsub.googleapis.com"
-
-  disable_dependent_services = true
-}
