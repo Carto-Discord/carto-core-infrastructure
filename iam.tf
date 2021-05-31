@@ -38,12 +38,24 @@ resource "google_project_iam_member" "cloudfunctions_binding" {
 
 resource "google_project_iam_member" "compute_binding" {
   project = var.project_id
-  role    = "roles/compute.viewer"
+  role    = "roles/compute.instanceAdmin.v1"
   member  = "serviceAccount:${google_service_account.terraform_sa.email}"
 }
 
 resource "google_project_iam_member" "iam_binding" {
   project = var.project_id
   role    = "roles/iam.serviceAccountUser"
+  member  = "serviceAccount:${google_service_account.terraform_sa.email}"
+}
+
+resource "google_project_iam_member" "security_binding" {
+  project = var.project_id
+  role    = "roles/compute.securityAdmin"
+  member  = "serviceAccount:${google_service_account.terraform_sa.email}"
+}
+
+resource "google_project_iam_member" "cloudrun_binding" {
+  project = var.project_id
+  role    = "roles/run.admin"
   member  = "serviceAccount:${google_service_account.terraform_sa.email}"
 }

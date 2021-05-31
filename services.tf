@@ -39,3 +39,17 @@ resource "google_project_service" "cloudfirestore_service" {
 
   disable_dependent_services = true
 }
+
+resource "google_project_service" "containerregistry_service" {
+  project = var.project_id
+  service = "containerregistry.googleapis.com"
+
+  disable_dependent_services = true
+}
+
+resource "google_project_service" "cloudrun_service" {
+  project = var.project_id
+  service = "run.googleapis.com"
+
+  disable_dependent_services = true
+}
