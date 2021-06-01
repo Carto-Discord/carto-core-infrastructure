@@ -48,12 +48,6 @@ resource "google_project_iam_member" "iam_binding" {
   member  = "serviceAccount:${google_service_account.terraform_sa.email}"
 }
 
-resource "google_project_iam_member" "security_binding" {
-  project = var.project_id
-  role    = "roles/compute.securityAdmin"
-  member  = "serviceAccount:${google_service_account.terraform_sa.email}"
-}
-
 resource "google_project_iam_member" "cloudrun_binding" {
   project = var.project_id
   role    = "roles/run.admin"
