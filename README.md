@@ -1,5 +1,7 @@
 # Carto - Core Infrastructure
 
+**Deprecated - GCP is no longer the cloud provider for Carto**
+
 Uses [Terraform](terraform.io) to generate the core infrastructure for the Carto Bot.
 
 ## Prerequisites
